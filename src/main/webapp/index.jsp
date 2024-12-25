@@ -11,6 +11,7 @@
     
     <a href="hello">Click here to see the HelloWorldServlet response</a>
     <h1> Now I am using docker.</h1>
+    <h2> Now pushing the code to ansible and then inturn pushes to docker and then to tomcat </h2>
 </body>
 </html>
 
