@@ -10,7 +10,7 @@
     <p>This is a simple web app using Java Servlets!</p>
     
     <a href="hello">Click here to see the HelloWorldServlet response</a>
-    <h1> Now i am using docker.</h1>
+    <h1> Now I am using docker.</h1>
 </body>
 </html>
 
