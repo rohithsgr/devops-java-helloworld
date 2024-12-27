@@ -1,0 +1,17 @@
+- hosts: docker
+  tasks:
+  - name: stop running docker container
+    command: docker stop tomcat-cont
+    ignore_errors: true
+
+  - name: remove the stopped docker container
+    command: docker rm tomcat-cont
+    ignore_errors: true
+
+  - name: remove the existing docker image
+    command: docker rmi rohithsgr/helloworld:v1
+    ignore_errors: true
+
+  - name: run the new docker container with new build file
+    command: docker run -d --name tomcat-cont -p 8081:8080 rohithsgr/helloworld:v1
+    ignore_errors: true
