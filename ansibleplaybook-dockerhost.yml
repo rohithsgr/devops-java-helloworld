@@ -1,0 +1,19 @@
+- hosts: docker-server
+
+  tasks:
+
+    - name: remove existing continer
+      command: sudo docker rm -f tomcat-cont
+      ignore_errors: true
+
+    - name: remove existing image to pull new image from dockerhub
+      command: sudo docker rmi rohithsgr/helloworld:v1
+      ignore_errors: true
+
+    - name: pull image from dockerhub
+      command: sudo docker pull rohithsgr/helloworld:v1
+      ignore_errors: true
+
+    - name: run tomcat custom docker container.
+      command: sudo docker run -d -p 8080:8080 -p 50000:50000 --name tomcat-cont rohithsgr/helloworld:v1
+      ignore_errors: true
