@@ -1,0 +1,11 @@
+- hosts: ansible
+  tasks:
+
+  - name: create new docker image with dockerfile and war file
+    command: docker build -t rohithsgr/helloworld:v1  .
+    args:
+      chdir: /opt/docker/
+    ignore_errors: true
+
+  - name: Push image to docker hub
+    command: docker push rohithsgr/helloworld:v1
