@@ -7,5 +7,7 @@
       chdir: /opt/docker/
     ignore_errors: true
 
+
   - name: Push image to docker hub
     command: docker push rohithsgr/helloworld:v1
+
