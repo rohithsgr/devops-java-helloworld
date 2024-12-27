@@ -33,7 +33,14 @@
                 <target>17</target>
             </configuration>
         </plugin>
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version> <!-- Updated WAR plugin -->
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml> <!-- For newer servlet versions -->
+        </configuration>
+      </plugin>
     </plugins>
-
-  </build>
-</project>
+    </build>
+    </project>
