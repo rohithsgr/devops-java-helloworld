@@ -1,0 +1,28 @@
+---
+- hosts: ansible-server
+  tasks:
+
+  - name: stop and remove existing container before removing its image.
+    command: sudo docker rm -f tomcat-cont
+    # args:
+    #  chdir: /opt/docker/
+    ignore_errors: true
+
+  - name: Remove existing image to build new one
+    become: yes
+    become_user: root
+    command: sudo docker rmi rohithsgr/helloworld:v1
+    # args:
+    #  chdir: /opt/docker/
+    ignore_errors: true
+
+  - name: create new docker image with dockerfile and war file
+    command: sudo docker build -t rohithsgr/helloworld:v1  .
+    # args:
+    #  chdir: /opt/docker/
+    ignore_errors: true
+
+
+  - name: Push image to docker hub
+    command: docker push rohithsgr/helloworld:v1
+    ignore_errors: true
