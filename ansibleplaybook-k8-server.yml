@@ -1,0 +1,11 @@
+---
+- hosts: kubernetes-root-server
+  tasks:
+
+    - name: run deployment in kubernetes server
+      command: kubectl apply -f helloworld-depl.yml
+      ignore_errors: true
+
+    - name: run service for the  deployment
+      command: kubectl apply -f helloworld-svc.yml
+      ignore_errors: true
