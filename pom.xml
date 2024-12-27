@@ -29,8 +29,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
             <configuration>
-                <source>11</source> <!-- Update to your Java version, e.g., 8, 11, 17 -->
-                <target>11</target>
+                <source>17</source> <!-- Update to your Java version, e.g., 8, 11, 17 -->
+                <target>17</target>
             </configuration>
         </plugin>
     </plugins>
